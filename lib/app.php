@@ -23,7 +23,6 @@ class app
 
         $controllerClass = ucfirst(self::$router->getController()).'Controller';
         $controllerMethod = strtolower(self::$router->getMethodPrefix().self::$router->getAction());
-
         //calling controller method
         $controllerObj = new $controllerClass();
         if(method_exists($controllerObj, $controllerMethod)){
