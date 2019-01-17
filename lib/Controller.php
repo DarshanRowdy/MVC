@@ -6,11 +6,14 @@
  * Time: 11:35 PM
  */
 
+require_once(ROOT . DS . 'lib' . DS . 'View.php');
+
 class Controller
 {
     protected $data;
     protected $model;
     protected $params;
+    protected $view;
 
     /**
      * @return mixed
@@ -38,6 +41,7 @@ class Controller
 
     public function __construct($data = array())
     {
+        $this->view = new View();
         $this->data = $data;
         $this->params = App::getRouter()->getParams();
     }

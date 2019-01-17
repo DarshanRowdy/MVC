@@ -7,15 +7,18 @@
  */
 
 require_once(ROOT . DS . 'lib' . DS . 'Controller.php');
+require_once(ROOT . DS . 'models' . DS . 'SiteModel.php');
+
 
 class SiteController extends Controller
 {
     public function index(){
-        echo 'You are here and here is site controller';
+        $this->view->msg = 'Hello This meg will be pass from controller';
+        $this->view->render('index/index');
     }
 
     public function create(){
-        echo 'here is create action';
+        $SiteModel = new SiteModel();
     }
 
     public function view(){
